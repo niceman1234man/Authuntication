@@ -1,8 +1,8 @@
-import {SignUp,Login} from '../Controllers/AuthController'
-import { UserVerification } from '../Middlwares/AuthMiddleware';
+import {SignUp,Login} from '../Controllers/AuthController.js'
+import { UserVerification } from '../Middlwares/AuthMiddleware.js';
 import express from 'express'
-const router=express.Router();
+export const router=express.Router();
 router.post("/signup",SignUp);
 router.post("/login",Login);
 router.post('/',UserVerification);
-export default router;
+
