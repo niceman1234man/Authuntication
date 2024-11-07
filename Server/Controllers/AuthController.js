@@ -1,5 +1,5 @@
-import User from "../Models/UserModel";
-import { CreateSecreteToken } from "../Util/SecreteToken";
+import User from "../Models/UserModel.js";
+import { CreateSecreteToken } from "../Util/SecreteToken.js";
 import bcrypt from 'bcrypt'
 
 export const SignUp=(req,res,next)=>{
