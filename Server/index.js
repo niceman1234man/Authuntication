@@ -1,20 +1,21 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import AuthRoute from './Routes/AuthRoute'
+import {router} from './Routes/AuthRoute.js'
+import { connectDb } from './config/db.js';
 dotenv.config();
 
-const PORT=4000;
+const PORT=process.env.PORT ||4000;
 const app =express();
 
-
+connectDb();
 app.use(cors({
-    origin:['http://localhost:4000'],
+    origin:['http://localhost:5173'],
     methods:['GET','PUT','DELETE','PUT'],
     credentials:true,
 }))
 app.use(express.json());
-app.use('/',AuthRoute);
+app.use('/',router);
 app.listen(PORT,()=>{
     console.log(`server running on port ${PORT}`)
 })
