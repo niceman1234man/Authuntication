@@ -39,10 +39,10 @@ if(sucess){
 setInputValue({...inputValue,email:"",password:""});
 }
   return (
-<div >
-      <h2>Login Account</h2>
+<div className="w-[50%] flex flex-col items-center justify-center bg-cyan-400 my-4 mx-auto p-6" >
+      <h2 className="p-2">Login Account</h2>
       <form onSubmit={submitHandle}>
-        <div>
+        <div className="p-2">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -50,22 +50,24 @@ setInputValue({...inputValue,email:"",password:""});
             value={email}
             placeholder="Enter your email"
             onChange={onchangeHandle}
+            className="p-2 ml-4"
           />
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
+        <div className="p-2">
+          <label htmlFor="password" className="p-2">Password</label>
           <input
             type="password"
             name="password"
             value={password}
             placeholder="Enter your password"
             onChange={onchangeHandle}
+            className="p-2 ml-4"
           />
         </div>
-        <button type="submit">Submit</button>
-        <span>
-          Already have an account? <Link to={"/signup"}>Signup</Link>
-        </span>
+        <button type="submit" className="bg-slate-500">Submit</button>
+        <p>
+          Already have an account? <Link to={"/signup"} className="bg-slate-500">Signup</Link>
+        </p>
       </form>
       <ToastContainer />
     </div>
